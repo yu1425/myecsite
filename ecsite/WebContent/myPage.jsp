@@ -12,70 +12,11 @@
 <meta name="keywords" content="" />
 <link rel="stylesheet" href="css/ecsite.css">
 <title>MyPage画面</title>
-<style type="text/css">
-body {
-	margin: 0;
-	padding: 0;
-	line-height: 1.6;
-	letter-spacing: 1px;
-	font-family: Verdana, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #333;
-	background: #fff;
-	background-image: url("images/wallpaper044.jpg");
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-}
 
-table {
-	text-align: center;
-	margin: 0 auto;
-}
 
-#header {
-	width: 100%;
-	height: 80px;
-	background-color: black;
-}
-
-#top {
-	width: 780px;
-	margin: 30px auto;
-	border: 1px solid #333;
-	background-color: rgba(255, 255, 255, 0.9);
-}
-.btn {
-	background-color: rgba(255, 255, 255, 0.01);
-	border:solid 1px rgba(30, 30, 30, 0.3) ;
-}
-
-.btn:hover {
-	background-color: white;
-}
-
-#main {
-	width: 100%;
-	height: 500px;
-	text-align: center;
-}
-
-#footer {
-	width: 100%;
-	height: 80px;
-	background-color: black;
-	clear: both;
-}
-
-#text-right {
-	display: inline-block;
-	text-align: right;
-}
-</style>
 </head>
 <body>
-	<div id="header">
-		<div id="pr"></div>
-	</div>
+	<jsp:include page="header.jsp"/>
 	<div id="main">
 		<div id="top">
 			<p>MyPage</p>
@@ -83,26 +24,26 @@ table {
 		<br>
 		<div>
 			<s:if test="myPageList == null">
-				<h3>ご購入情報はありません</h3>
+				<h3>Nothing</h3>
 			</s:if>
 			<s:elseif test="message == null">
-				<h3>ご購入情報は以下となります。</h3>
+				<h3>Purchase History</h3>
 
 
-				<table border="1">
+				<table class="table2" border="1">
 					<tr>
-						<th>商品名</th>
-						<th>値段</th>
-						<th>購入個数</th>
-						<th>支払い方法</th>
-						<th>購入日</th>
+						<th>Item Name</th>
+						<th>Price</th>
+						<th>Count</th>
+						<th>Payment</th>
+						<th>Purchase date</th>
 					</tr>
 					<s:iterator value="myPageList">
 
 						<tr>
 							<td><s:property value="itemName" /></td>
-							<td><s:property value="totalPrice" /><span>円</span></td>
-							<td><s:property value="totalCount" /><span>個</span></td>
+							<td><s:property value="totalPrice" /><span>yen</span></td>
+							<td><s:property value="totalCount" /><span></span></td>
 							<td><s:property value="payment" /></td>
 							<td><s:property value="insert_date" /></td>
 
@@ -110,11 +51,12 @@ table {
 						</tr>
 					</s:iterator>
 				</table>
+				<br>
 
 
-				<s:form action="MyPageAction">
+				<s:form action="MyPageAction" theme="simple">
 					<input type="hidden" name="deleteFlg" value="1" />
-					<s:submit class="btn" value="削除" />
+					<div class="btn1"><s:submit class="btn" value="Delete" /></div>
 				</s:form>
 				</s:elseif>
 
@@ -129,13 +71,13 @@ table {
 
 
 
-			<div id="text-right">
+			<div id="text-link">
 
 				<p>
-					HOMEへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
+					<a href='<s:url action="GoHomeAction" />'>Home</a>
 				</p>
 				<p>
-					ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a>
+					<a href='<s:url action="LogoutAction" />'>Logout</a>
 				</p>
 			</div>
 		</div>

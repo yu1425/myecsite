@@ -10,108 +10,13 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
+<link rel="stylesheet" href="css/ecsite.css">
+
 <title>Login画面</title>
-<style type="text/css">
-body {
-	margin: 0;
-	padding: 0;
-	line-height: 1.6;
-	letter-spacing: 1px;
-	font-family: Verdana, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #333;
-	background: #fff;
-	background-image: url("images/wallpaper044.jpg");
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-}
 
-.table1 {
-	margin: 0 auto;
-	text-align: center;
-	table-layout: fixed;
-}
-
-.label {
-	margin: 0 auto;
-}
-
-.txt {
-	margin-right: 100px;
-	background-color: rgba(255, 255, 255, 0.01);
-}
-
-.txt:hover {
-	background-color: white;
-}
-
-.btn {
-	background-color: rgba(255, 255, 255, 0.01);
-	border:solid 1px rgba(30, 30, 30, 0.3) ;
-}
-
-.btn:hover {
-	background-color: white;
-}
-
-.bg_test {
-	/* 背景画像指定 */
-
-}
-
-/* #box {
-	position: abusolute;
-	top: 100px;
-	left: 500px;
-} */
-#header {
-	width: 100%;
-	height: 80px;
-	background-color: black;
-}
-
-#top {
-	width: 780px;
-	margin: 30px auto;
-	border: 1px solid #333;
-	background-color: rgba(255, 255, 255, 0.9);
-}
-
-#main {
-	width: 100%;
-	height: 500px;
-	text-align: center;
-	background-color: #
-}
-
-#error {
-	font-size: 0.8em;
-	color: red;
-	border: 1px solid red;
-	background-color: #FFBABA;
-	margin: 10px auto;
-	background-position: 10px center;
-	width: 60%;
-	text-align: center;
-}
-
-#footer {
-	width: 100%;
-	height: 80px;
-	background-color: black;
-	clear: both;
-}
-
-#text-link {
-	display: inline-block;
-	text-align: right;
-}
-</style>
 </head>
 <body>
-	<div id="header">
-		<div id="pr"></div>
-	</div>
+	<jsp:include page="header.jsp"/>
 
 	<div id="main">
 
@@ -121,7 +26,7 @@ body {
 			</p>
 		</div>
 		<br>
-		<p>商品を購入するならログインせぇや。</p>
+		<p>Please Login!</p>
 
 
 		<div id="loginform">
@@ -155,22 +60,22 @@ body {
 						</s:iterator>
 					</div>
 				</s:if>
-				<table class="table1">
+				<table border="1">
 					<tr>
-						<th scope="row"><s:label class="label" value="ユーザーID：" /></th>
+						<th scope="row"><s:label class="label" value="User ID：" /></th>
 						<td><s:if test="#session.savedUserIdFlg ==true">
 								<s:textfield name="loginUserId" class="txt"
-									value='%{session.savedUserId}' placeholder="ユーザーID"
+									value='%{session.savedUserId}' placeholder="User ID"
 									autocomplete="off" />
 							</s:if> <s:else>
 								<s:textfield name="loginUserId" value='%{loginUserId}'
-									class="txt" placeholder="ユーザーID" autocomplete="off" />
+									class="txt" placeholder="User ID" autocomplete="off" />
 							</s:else></td>
 					</tr>
 					<tr>
-						<th scope="row"><s:label class="label" value="パスワード：" /></th>
+						<th scope="row"><s:label class="label" value="Password：" /></th>
 						<td><s:password name="loginPassword" class="txt"
-								placeholder="パスワード" autocomplete="off" /></td>
+								placeholder="Password" autocomplete="off" /></td>
 					</tr>
 
 				</table>
@@ -182,21 +87,23 @@ body {
 					<s:else>
 						<s:checkbox name="savedUserIdFlg" class="btn" />
 					</s:else>
-					<s:label value="ユーザーID保存" />
-					<br> <br>
+					<s:label value="Saved User ID" />
+					<br><br>
 
 
 				</div>
-				<s:submit value="ログイン" class="btn" />
+				<div class="btn1">
+				<s:submit value="Login" class="btn" />
+				</div>
 
 			</s:form>
 			<br />
 			<div id="text-link">
 				<p>
-					新規ユーザー登録は<a href='<s:url action="UserCreateAction" />'>こちら</a>
+					<a href='<s:url action="UserCreateAction" />'>UserCreate</a>
 				</p>
 				<p>
-					Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
+					<a href='<s:url action="GoHomeAction" />'>Home</a>
 				</p>
 			</div>
 		</div>

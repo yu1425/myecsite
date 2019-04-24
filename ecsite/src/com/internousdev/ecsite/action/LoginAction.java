@@ -56,7 +56,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 		}
 
-		isNotUserInfoErrorMessage = "ユーザーID又はパスワードが間違っています。";
+		isNotUserInfoErrorMessage = "User ID or password is incorrect";
 		return result;
 
 	}

@@ -10,7 +10,13 @@ public class LogoutAction extends ActionSupport implements SessionAware {
 	public Map<String, Object> session;
 
 	public String execute() {
+		boolean savedUserId = Boolean.valueOf(String.valueOf(session.get("savedUserIdFlg")));
+		String loginUserId = String.valueOf(session.get("loginUserId"));
 		session.clear();
+		if(savedUserId) {
+			session.put("savedUserIdFlg", savedUserId);
+			session.put("savedUserId", loginUserId);
+		}
 		return SUCCESS;
 	}
 

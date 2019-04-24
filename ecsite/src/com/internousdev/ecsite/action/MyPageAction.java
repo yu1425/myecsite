@@ -40,9 +40,9 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 		int res = myPageDAO.buyItemDeleteHistory(item_transaction_id, user_master_id);
 		if (res > 0) {
 			myPageList = null;
-			setMessage("商品情報を正しく削除しました。");
+			setMessage("It was properly removed.");
 		} else if (res == 0) {
-			setMessage("商品情報の削除に失敗しました。");
+			setMessage("It failed to delete Item information");
 		}
 
 	}

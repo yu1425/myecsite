@@ -7,9 +7,19 @@ body {
 	font-size: 12px;
 	color: #333;
 	background: #fff;
-	background-image: url("images/wallpaper044.jpg");
+	background-image: url("../images/wallpaper044.jpg");
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
+}
+
+table {
+	text-align: center;
+	margin: 0 auto;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.head {
+	padding-left: -40px;
 }
 
 .table1 {
@@ -18,42 +28,72 @@ body {
 	table-layout: fixed;
 }
 
-.label {
-	margin: 0 auto;
+.table2 {
+	background-color: rgba(255, 255, 255, 0.8);
 }
+
+/* .label {
+	margin: 0 auto;
+} */
 
 .txt {
 	margin-right: 100px;
-	background-color: rgba(255, 255, 255, 0.01);
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
 .txt:hover {
 	background-color: white;
 }
 
+.contents {
+	background-image: linear-gradient(to top left, #A5A5A5, #BABAC2, #E8E8E8, #A5A5A5, #BABAC2
+		);
+	text-decoration: none;
+	border-radius: 100px;
+	margin: auto;
+	font-size: 1vw;
+	text-align: center;
+	color: #555;
+	min-width: 60px;
+	min-height: 26px;
+	width: 6vw;
+	height: 0.8vw;
+}
+
+.btn1 {
+	text-align: center;
+}
+
 .btn {
-	background-color: rgba(255, 255, 255, 0.01);
-	border:solid 1px rgba(30, 30, 30, 0.3) ;
+	background-color: rgba(255, 255, 255, 0.7);
+	border: solid 1px rgba(30, 30, 30, 0.3);
 }
 
-.btn:hover {
-	background-color: white;
-}
-
-.bg_test {
-	/* 背景画像指定 */
-
-}
-
-/* #box {
-	position: abusolute;
-	top: 100px;
-	left: 500px;
-} */
-#header {
+.headerul {
 	width: 100%;
 	height: 80px;
 	background-color: black;
+	list-style: none;
+}
+
+.headerli {
+	display: inline-block;
+	float: left;
+}
+
+.headerli .contents {
+	float: left;
+	padding-buttom: 10px;
+	margin: 30px;
+	color: chacole;
+}
+
+.headerimg {
+	margin-top: 5px;
+	height: 70px;
+	width: 100px;
+	padding-left: 5px;
+	border: 1px solid black;
 }
 
 #top {
@@ -67,7 +107,11 @@ body {
 	width: 100%;
 	height: 500px;
 	text-align: center;
-	background-color: #
+}
+
+#text-link {
+	display: inline-block;
+	text-align: center;
 }
 
 #error {
@@ -88,7 +132,3 @@ body {
 	clear: both;
 }
 
-#text-link {
-	display: inline-block;
-	text-align: right;
-}

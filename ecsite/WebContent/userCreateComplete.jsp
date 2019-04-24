@@ -13,65 +13,20 @@
 <meta name="keywords" content="" />
 <link rel="stylesheet" href="css/ecsite.css">
 <title>UserCreateComplete画面</title>
-<style type="text/css">
-body {
-	margin: 0;
-	padding: 0;
-	line-height: 1.6;
-	letter-spacing: 1px;
-	font-family: Verdana, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #333;
-	background: #fff;
-	background-image: url("images/wallpaper044.jpg");
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-}
 
-table {
-	text-align: center;
-	margin: 0 auto;
-}
-
-#header {
-	width: 100%;
-	height: 80px;
-	background-color: black;
-}
-
-#top {
-	width: 780px;
-	margin: 30px auto;
-	border: 1px solid #333;
-	background-color: rgba(255, 255, 255, 0.9);
-}
-
-#main {
-	width: 100%;
-	height: 500px;
-	text-align: center;
-}
-
-#footer {
-	width: 100%;
-	height: 80px;
-	background-color: black;
-	clear: both;
-}
-</style>
 </head>
 <body>
-	<div id="header">
-		<div id="pr"></div>
-	</div>
+	<jsp:include page="header.jsp"/>
 	<div id="main">
 		<div id="top">
 			<p>UserCreateComplete</p>
 		</div>
+		<br>
+		<br>
 		<div>
-			<h3>ユーザーの登録が完了致しました。</h3>
+			<h3>Complete!</h3>
 			<div>
-				<a href='<s:url action="HomeAction" />'>ログインへ</a>
+				<a href='<s:url action="HomeAction" />'>Login</a>
 			</div>
 		</div>
 	</div>
